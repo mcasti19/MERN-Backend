@@ -1,0 +1,28 @@
+*** Instalaciones npm ***
+npm i nodemon -g  // https://www.npmjs.com/package/nodemon
+npm i express  // https://www.npmjs.com/package/express
+npm i dotenv (Manejo de variables de entorno)  // https://www.npmjs.com/package/dotenv
+npm i express-validator (Validador de campos)  // https://www.npmjs.com/package/express-validator
+npm i bcryptjs (Encriptador de contraseñas)  // https://www.npmjs.com/package/bcryptjs
+npm i jsonwebtoken (Libreria para trabajar con los JWT) // https://www.npmjs.com/package/jsonwebtoken
+npm i cors (Permite restringir el acceso a nuestra API) // https://www.npmjs.com/package/cors
+
+
+//* user: Mcasti87
+//* Pass: M4Qe1FntWULMAMXN
+
+
+
+
+*** Sitios para documentacion ** 
+Status de errores: https://www.restapitutorial.com/httpstatuscodes
+Manejo de autenticacion: https://jwt.io/
+Mas informacion sobre el uso del CORS: https://www.enable-cors.org
+
+
+
+** NOTAS **
+
+AL cambiar cualquier cosa minima en la Palabra Secreta, eso anula autoamticamente todos los token
+por lo que es util al momento de que se comprometa algun token, se pueda cambiar la palabra secreta y obligar a todos
+los usuarios a pasar nuevamente por la autenticacion. 
