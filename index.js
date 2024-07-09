@@ -1,4 +1,5 @@
 const express = require( 'express' );
+const path = require( 'path' )
 const { dbConnection } = require( './database/config' );
 const cors = require( 'cors' );
 require( 'dotenv' ).config();
@@ -14,21 +15,20 @@ dbConnection();
 //* CORS
 app.use( cors() );
 
+//*Directorio Publico 
+app.use( express.static( 'public' ) );
 
 //*Lectura y Parseo del body
 app.use( express.json() );
 
-//* Rutas Auth
+
+//* Rutas 
 app.use( '/api/auth', require( './routes/auth' ) ) // Aquello que exporte el 'routes/auth' se va a habilitar en 'api/auth'
-
-
-//* Rutas Eventos
 app.use( '/api/events', require( './routes/events' ) )
 
-
-
-//*Directorio Publico 
-app.use( express.static( 'public' ) );
+app.use( '*', ( req, res ) => {
+    res.sendFile( path.join( __dirname, 'public/index.html' ) );
+} );
 
 
 //Escuchar peticiones
